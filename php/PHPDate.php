@@ -1,43 +1,43 @@
-<?php
+ï»¿<?php
 class PHPDate
 {
 	/**
-	 * ÖÜ¿ªÊ¼ÓÚ
+	 * å‘¨å¼€å§‹äº
 	 *
 	 * @var int
 	 */
 	public $weekStart;
 	
 	/**
-	 * Ã¿ÔÂÌìÊı
+	 * æ¯æœˆå¤©æ•°
 	 *
 	 * @var int
 	 */
 	private $daysInMonth;
 	
 	/**
-	 * ÔÂÓ¢ÎÄÃû
+	 * æœˆè‹±æ–‡å
 	 *
 	 * @var String
 	 */
 	private $monthNames;
 	
 	/**
-	 * ĞÇÆÚÓ¢ÎÄÃû
+	 * æ˜ŸæœŸè‹±æ–‡å
 	 *
 	 * @var unknown_type
 	 */
 	private  $dayNames;
 
 	/**
-	 * ÔÂÖĞÎÄÃû
+	 * æœˆä¸­æ–‡å
 	 *
 	 * @var String
 	 */
 	private $monthNamesCN;
 	
 	/**
-	 * ĞÇÆÚÖĞÎÄÃû
+	 * æ˜ŸæœŸä¸­æ–‡å
 	 *
 	 * @var String
 	 */
@@ -45,18 +45,18 @@ class PHPDate
 	
 	function __construct()
 	{
-		$this->weekStart = 0; //ÖÜÒ»
+		$this->weekStart = 0; //å‘¨ä¸€
 		$this->daysInMonth = array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
 		$this->monthNames = array("January", "February", "March", "April", "May", "June",
                             "July", "August", "September", "October", "November", "December");
 		$this->dayNames = array("S", "M", "T", "W", "T", "F", "S");
-		$this->monthNamesCN = array("Ò»ÔÂ", "¶şÔÂ", "ÈıÔÂ", "ËÄÔÂ", "ÎåÔÂ", "ÁùÔÂ",
-                            "ÆßÔÂ", "°ËÔÂ", "¾ÅÔÂ", "Ê®ÔÂ", "Ê®Ò»ÔÂ", "Ê®¶şÔÂ");
-		$this->dayNamesCN = array("ÈÕ", "Ò»", "¶ş", "Èı", "ËÄ", "Îå", "Áù");		
+		$this->monthNamesCN = array("ä¸€æœˆ", "äºŒæœˆ", "ä¸‰æœˆ", "å››æœˆ", "äº”æœˆ", "å…­æœˆ",
+                            "ä¸ƒæœˆ", "å…«æœˆ", "ä¹æœˆ", "åæœˆ", "åä¸€æœˆ", "åäºŒæœˆ");
+		$this->dayNamesCN = array("æ—¥", "ä¸€", "äºŒ", "ä¸‰", "å››", "äº”", "å…­");		
 	}
 	
 	/**
-	 * ÉèÖÃÊ±Çø
+	 * è®¾ç½®æ—¶åŒº
 	 *
 	 */
 	function setTimezone()
@@ -65,7 +65,7 @@ class PHPDate
 	}
 	
 	/**
-	 * »ñÈ¡ÖÜÇø¼ä
+	 * è·å–å‘¨åŒºé—´
 	 *
 	 * @param int $offset
 	 */
@@ -73,12 +73,12 @@ class PHPDate
 	{
 		$rs = array();
 	    $timenow = time()+3600*8;
-	    $day = strftime("%w",$timenow); //µ±Ç°ĞÇÆÚµÚ¼¸Ìì,0ÎªĞÇÆÚÌì
-	    $date1 = date('Y-m-d',strtotime(" -$day days")); //±¾ÖÜ¿ªÊ¼µÄÈÕÆÚ
-	    $nowstart = strtotime($date1); //±¾ÖÜ¿ªÊ¼ºÍ½áÊøµÄÊ±¼ä´Á,
-	    $nowend = $nowstart+3600*24*7-1;//3600Ãë,24Ğ¡Ê±,Ò»ÖÜ7Ìì,½áÊøÊ±¼äÔÙ¼õ1Ãë
+	    $day = strftime("%w",$timenow); //å½“å‰æ˜ŸæœŸç¬¬å‡ å¤©,0ä¸ºæ˜ŸæœŸå¤©
+	    $date1 = date('Y-m-d',strtotime(" -$day days")); //æœ¬å‘¨å¼€å§‹çš„æ—¥æœŸ
+	    $nowstart = strtotime($date1); //æœ¬å‘¨å¼€å§‹å’Œç»“æŸçš„æ—¶é—´æˆ³,
+	    $nowend = $nowstart+3600*24*7-1;//3600ç§’,24å°æ—¶,ä¸€å‘¨7å¤©,ç»“æŸæ—¶é—´å†å‡1ç§’
 	    for($i=7; $i>0; $i--) {
-	        $theday = $nowstart-3600*24*$i; //ÉÏÖÜ¿ªÊ¼ºÍ½áÊøµÄÊ±¼ä´Á
+	        $theday = $nowstart-3600*24*$i; //ä¸Šå‘¨å¼€å§‹å’Œç»“æŸçš„æ—¶é—´æˆ³
 	        $theday2 = date("Y-m-d", $theday);
 	        array_push($rs, $theday2);
 	    }
@@ -86,7 +86,7 @@ class PHPDate
 	}
 	
 	/**
-	 * »ñÈ¡ÔÂÇø¼ä
+	 * è·å–æœˆåŒºé—´
 	 *
 	 * @param int $offset
 	 */
@@ -96,7 +96,7 @@ class PHPDate
 	}
 	
 	/**
-	 * »ñÈ¡ÈÕ
+	 * è·å–æ—¥
 	 *
 	 * @param int $offset
 	 */
