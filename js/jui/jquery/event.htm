@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+    <head>
+<META content="text/html; charset=UTF-8" http-equiv=Content-Type>
+        
+	<title>jQuery UI Tabs - Sortable</title>
+	<script type="text/javascript" src="jquery.js"></script>
+    <!-- <script type="text/javascript" src="jquery.hotkeys.js"></script>-->
+    <script type="text/javascript" src="http://jshotkeys.googlepages.com/jquery.hotkeys.js"></script>
+
+<style>
+            * {font-family: Helvetica, Verdana, Arial; font-size:0.95em}
+            .eventNotifier{width: 100px; float: left; color:navy; border: dotted 1px navy; padding: 4px; background-color:white; margin:3px}
+            .dirty{border: solid 1px #0ca2ff; color:white; background-color:#0ca2ff}
+            
+        </style>
+
+
+    <script type="text/javascript">
+        function domo() {
+            jQuery(document).bind('keydown', 'return',function (evt){alert("ok"); return false; });
+        }
+
+jQuery(document).ready(domo);
+            
+	</script>
+    
+</head>
+<body>
+
+</body>
+</html>
