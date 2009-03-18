@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>douban</title>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script>
+    google.load("jquery", "1.3.2"); google.load("jqueryui", "1.7.0");
+</script>
+
+    </head>
+    <body>
+
+        <style type="text/css">
+#page_focus{border: 1px solid #ccc; margin:0 10px 0 0;height:16px;width:171px;padding:2px 0 0 2px}
+#page_focus:focus{border: 1px solid #686868;}
+
+.greyinput{color:#ccc;}
+
+        </style>
+        <script type="text/javascript">
+            
+            $(function() {
+                    var o = $("#page_focus")[0];
+if(!o.value || o.value == o.title){
+        $(o).addClass("greyinput");
+        o.value = o.title;
+    }
+    $(o).focus(function(){
+        $(o).removeClass("greyinput");
+        if(o.value == o.title) o.value = "";
+    });
+    $(o).blur(function(){
+        if(!o.value){
+            $(o).addClass("greyinput");
+            o.value = o.title;
+        }
+    });
+                    
+            })
+        </script>
+        <input name="search_text" title="书籍、电影、音乐" type="text" size="22" maxlength="60" value="" id="page_focus"/>
+
+
+    </body>
+</html>
+

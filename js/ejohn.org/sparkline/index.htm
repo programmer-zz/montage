@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+    <head>
+<META content="text/html; charset=UTF-8" http-equiv=Content-Type>
+        
+	<title>jQuery</title>
+
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script>
+google.load("jquery", "1.3.2");
+</script>
+
+<script language="javascript" src="jspark.js"></script>
+
+<style>
+.sparkline { display: none; } 
+</style>
+
+
+<script type="text/javascript">
+function bind() {
+    $("#t").html('<span class="sparkline">88,84,82,92,82,86,66,82,44,64,66,88,96,80,24,26,14,0,0,26,8,6,6,24,52,66,36,6,10,14,30</span>');
+}
+jQuery(document).ready(bind);
+</script>
+    
+</head>
+<body>
+
+<span class="sparkline">88,84,82,92,82,86,66,82,44,64,66,88,96,80,24,26,14,0,0,26,8,6,6,24,52,66,36,6,10,14,30</span>
+
+<div id="t"></div>
+</body>
+</html>
