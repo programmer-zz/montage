@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>CSS Tabs | unraveled</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+
+<style type="text/css">
+
+body {
+font: 100% verdana, arial, sans-serif;
+background-color: #fff;
+margin: 50px;
+}
+
+/* begin css tabs */
+
+ul#tabnav { /* general settings */
+text-align: left; /* set to left, right or center */
+margin: 1em 0 1em 0; /* set margins as desired */
+font: bold 11px verdana, arial, sans-serif; /* set font as desired */
+border-bottom: 1px solid #6c6; /* set border COLOR as desired */
+list-style-type: none;
+padding: 3px 10px 3px 10px; /* THIRD number must change with respect to padding-top (X) below */
+}
+
+ul#tabnav li { /* do not change */
+display: inline;
+}
+
+body#tab1 li.tab2{ /* settings for selected tab */
+border-bottom: 1px solid #fff; 
+background-color: red;
+}
+
+body#tab1 li.tab2 a { /* settings for selected tab link */
+background-color: #fff; 
+color: #000; 
+position: relative;
+top: 1px;
+padding-top: 4px;
+}
+
+body#tab1 .selected {
+border-bottom: 1px solid #fff; 
+background-color: red;
+}
+
+body#tab1 .selected a{
+background-color: #fff; 
+color: #000; 
+position: relative;
+top: 1px;
+padding-top: 4px;
+}
+
+ul#tabnav li a { /* settings for all tab links */
+padding: 3px 4px; /* set padding (tab size) as desired; FIRST number must change with respect to padding-top (X) above */
+border: 1px solid #6c6; /* set border COLOR as desired; usually matches border color specified in #tabnav */
+background-color: #cfc; /* set unselected tab background color as desired */
+color: #666; /* set unselected tab link color as desired */
+margin-right: 0px; /* set additional spacing between tabs as desired */
+text-decoration: none;
+border-bottom: none;
+}
+
+ul#tabnav a:hover { /* settings for hover effect */
+background: #fff; /* set desired hover color */
+}
+
+
+
+/* end css tabs */
+	
+</style>
+</head>
+
+<body id="tab1">
+
+<ul id="tabnav">
+	<li class="tab1"><a href="#">Tab One</a></li>
+	<li class="tab2"><a href="#">Tab Two</a></li>
+	<li class="tab3" class="selected"><a href="#">Tab Three</a></li>
+	<li class="selected"><a href="#">Tab Four</a></li>
+</ul>
+
+
+</body>
+</html>
