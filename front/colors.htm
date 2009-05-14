@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>box</title>
+        <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script>
+google.load("jquery", "1.3.2");
+google.setOnLoadCallback(OnLoad);
+
+function OnLoad() 
+{
+    //var c = document.getElementById('c');
+    var c = $("#c");
+    
+    jQuery(c).bind('change', 'return',function (evt){
+        document.getElementById('look').style.background = this.value;
+        document.getElementById('look').innerHTML = this.value;        
+        return false; });
+    jQuery(c).bind('keyup', 'return',function (evt){
+        document.getElementById('look').style.background = this.value;
+        document.getElementById('look').innerHTML = this.value;
+        return false; });    
+    jQuery(c).bind('input', 'return',function (evt){
+        document.getElementById('look').style.background = this.value;
+        document.getElementById('look').innerHTML = this.value;
+        return false; });   
+
+}
+</script>
+
+</head>
+<body>
+    
+<div id="look" style="width:100px; height:100px; margin:2em;"></div>
+<input id="c" type="text" name="c" value="" />
+</body></html>
+
+

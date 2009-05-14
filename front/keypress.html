@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>KeyCode :: expandinghead.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style type="text/css">
+/*<![CDATA[*/
+body { background: #ffffff;
+       color: #000000;
+       font-size: 14px;
+       font-weight: bold;
+}
+a:link { color: #ff0000; }
+a:visited { color: #0000cc; }
+a:active { color: #ffff00; }
+#container ( text-align: center; )
+.foot { font-size: 10px;
+        color: #999999;
+}
+h1 { font-size: 16px;
+     color: #3366cc;
+}
+input { color: #333333;
+        background-color: transparent;
+        border: 1px solid #0036600;
+        font-weight: bold;
+ }
+/*]]>*/
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+var isDOM = document.getElementById? true : false; 
+var isNS4 = document.layers? true : false;
+if (isNS4) document.captureEvents(Event.KEYPRESS);
+document.onkeydown = function (evt) {
+if (isNS4) key = evt.which;
+else if (isDOM) key = (evt || event).keyCode;
+document.f.dd.value=key;
+document.f.aa.value='';
+}
+/*]]>*/
+</script>
+</head>
+<body onload="document.f.aa.focus()">
+
+<div id="container" align="center">
+<h3>KeyCode</h3>
+<form name="f" id="f" method="post" action="" onsubmit="return false;">
+Key <input type="text" name="aa" id="aa" value="" size="2" />  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; KeyCode <input type="text" name="dd" id="dd" value="" size="4" />
+</form><br /><br />
+<span class="foot">expanding head</span>
+</div>
+&#8482;
+
+</body>
+</html>
+
+
+
+
+
