@@ -20,7 +20,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 
 }
 
-var about = "<br /><br /><a href='http://expression.bj.cn' target='_blank'>expression.bj.cn</a>";
+var about = "<br /><br /><a href='http://kungfu.js.cn' target='_blank'>kungfu.js.cn</a>";
 
 _ep_debug = false;
 
