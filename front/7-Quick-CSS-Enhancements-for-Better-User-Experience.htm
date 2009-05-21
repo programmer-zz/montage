@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <title>7 Quick CSS Enhancements for Better User Experience</title>
+
+        <style type="text/css">
+
+::selection			{ background:#c3effd; color:#000; /* Safari and Opera */ }
+::-moz-selection  { background:#c3effd; color:#000; /* Firefox */ }
+
+html { overflow-y:scroll; }
+
+input		{ -moz-border-radius:10px; -webkit-border-radius:10px;}
+
+/* wiki可能用的就是这个，但是IE无效 */
+a[href$='.pdf'] { padding:0 50px 0 0; background:transparent url(img/pdf.gif) no-repeat center right; }
+
+
+        </style>
+
+    </head>
+    <body>        
+
+来自：http://davidwalsh.name/css-enhancements-user-experience
+
+<input type="text" name="test" ></input>
+
+<a href="test.pdf">pdf link</a>
+
+    </body>
+</html>
