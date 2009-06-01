@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>toLowerCase and toUpperCase</title>
+        <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+        <script>
+            google.load("jquery", "1.3.2"); 
+            google.load("jqueryui", "1.7.0");
+
+        </script>
+
+        <style type="text/css">
+        </style>
+
+    </head>
+    <body style="padding:20px;">        
+    <textarea rows=5 cols=60>
+    </textarea><br /><br />
+    <input type="button" id="toLowerCase" value="toLowerCase"/>
+    <input type="button" id="toUpperCase" value="toUpperCase"/>
+    
+
+<script>
+$().ready(function() {
+    $("#toLowerCase").click(
+		function() {
+			var s = $("textarea").attr("value");
+			$("textarea").attr("value", s.toLowerCase())
+		}
+	);
+
+    $("#toUpperCase").click(
+		function() {
+			var s = $("textarea").attr("value");
+			$("textarea").attr("value", s.toUpperCase())
+		}
+	);
+});
+</script>
+    </body>
+</html>
