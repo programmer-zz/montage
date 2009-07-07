@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://api.baidu.com/sem/pro/v1"><SOAP-ENV:Body><ns1:getProfessionalReportIdRequest><reportCondition><ReportType><reporttype>1</reporttype></ReportType><StartDate>2009-02-01</StartDate><StatIds>1</StatIds><StatIds>2</StatIds><StatIds>3</StatIds><EndDate>2009-03-02</EndDate><StatObj><statobj>7</statobj></StatObj><StatRange><statrange>0</statrange></StatRange></reportCondition></ns1:getProfessionalReportIdRequest></SOAP-ENV:Body></SOAP-ENV:Envelope>
