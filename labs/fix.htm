@@ -1,0 +1,32 @@
+
+<html>
+<head>
+</head>
+
+
+<body>
+
+<div style="height:1200px; ">
+content
+</div>
+
+<div>
+    <div id="boshi" style="position:absolute; top:0px; background-color:gray; height:140px; width:30%">
+        abc
+    </div>
+</div>
+
+<script language="JavaScript" type="text/javascript">
+function rightBottomAd(){
+    var abc = document.getElementById("boshi");
+    var t = document.body.scrollTop + document.body.clientHeight - 140 + "px";
+    abc.style.top = t;
+    //140是这个层的高度；
+    setTimeout("rightBottomAd()", 50);
+}
+
+rightBottomAd();
+
+</script>
+</body>
+</html>
