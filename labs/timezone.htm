@@ -1,0 +1,98 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK" /> 
+<body>
+<script>
+/*
+http://zh.wikipedia.org/w/index.php?title=协调世界时&variant=zh-cn
+美国一般使用UTC+12
+
+“由于地球每天的自转是有些不规则的，而且正在缓慢减速，因此，格林尼治时间已经不再被作为标准时间使用。现在的标准时间，是由原子钟报时的协调世界时（UTC）。” 
+http://zh.wikipedia.org/w/index.php?title=GMT&variant=zh-cn
+
+
+==GMT和UTC==
+
+对一般人来说，这两个时间的差别是可以忽略的。
+
+什么事格林尼治时间
+http://www.hudong.com/wiki/%E6%A0%BC%E6%9E%97%E5%B0%BC%E6%B2%BB%E6%97%B6%E9%97%B4
+http://zh.wikipedia.org/wiki/%E6%A0%BC%E6%9E%97%E5%B0%BC%E6%B2%BB%E6%A8%99%E6%BA%96%E6%99%82%E9%96%93
+http://www.time.ac.cn/time/concept/4.htm
+http://www.xxkt.cn/kepu/2007/13197.html
+“在时区的划分上有时不能完全按照经度界限，要照顾到国界、地形、河流等具体情况，由各个国家根据方便与否加以划定。”
+
+日期变更线 International Date Line 
+http://www.worldatlas.com/aatlas/infopage/dateline.htm
+
+
+==什么是UTC时间==
+http://en.wikipedia.org/wiki/Coordinated_Universal_Time
+"文字游戏"
+
+==什么是Unix时间==
+http://en.wikipedia.org/wiki/Unix_time
+http://linuxtoy.org/archives/unix-time-1234567890.html
+维基有过这样的解释："UNIX 时间（或称 POSIX 时间）是 UNIX 或类 UNIX 系统使用的时间表示方式，从协调世界时 1970 年 1 月 1 日 0 时 0 分 0 秒起至现在的总秒数，不包括闰秒。" 
+1970－01－01 00：00：00
+因为在1970年，Unix操作系统正式投入使用。http://zhidao.baidu.com/question/48512891.html
+总之是和创立时间有关：http://linux.chinaunix.net/bbs/viewthread.php?tid=773348
+
+http://www.linuxfans.org/bbs/thread-25434-1-1.html
+
+==js用的是什么时间==
+
+==一些工具==
+unix时间转换：
+http://www.onlineconversion.com/unix_time.htm
+
+时间，真是基础服务啊：
+http://www.timeanddate.com/
+http://www.worldtimeserver.com/time_zone_guide/index.aspx
+
+一个gadget：
+http://www.google.com/ig/directory?url=joserodmon.googlepages.com/alacal_uk.xml&type=gadgets
+
+*/
+
+
+//from http://http://www.unix-center.net/articles.techrepublic.com.com/5100-10878_11-6016329.html
+// create Date object for current location
+d = new Date();
+
+// convert to msec since Jan 1 1970 (GMT)
+//getTime()
+//returns: 
+//The millisecond representation of the specified Date object datethat is, the number of milliseconds between midnight (GMT) on 1/1/1970 and the date and time specified by date.
+localTime = d.getTime();
+
+// obtain local UTC offset and convert to msec
+//60 * 1000 = 60000. 为一分钟的微妙数
+//getTimezoneOffset 的单位是分钟，由此可知客户端的时区
+//getTimezoneOffset() The difference, in minutes, between GMT and local time.
+localOffset = d.getTimezoneOffset() * 60000; 
+
+// obtain UTC time in msec
+utc = localTime + localOffset;
+
+// obtain and add destination's UTC time offset
+// for example, Bombay 
+// which is UTC + 5.5 hours
+offset = 8;    //Beijing UTC+8
+beijing = utc + (3600000 * offset); //3600000 为一小时的微秒数
+
+// convert msec value to date string
+nd = new Date(beijing); 
+document.writeln("北京时间：Beijing time is " + nd.toLocaleString() + "<br>");
+
+
+offset = 5.5;   
+bombay = utc + (3600000*offset);
+// convert msec value to date string
+nd = new Date(bombay); 
+document.writeln("孟买时间：Bombay time is " + nd.toLocaleString() + "<br>");
+
+
+
+</script>
+</body>
+</html>
