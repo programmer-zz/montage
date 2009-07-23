@@ -1,0 +1,40 @@
+<html>
+<body>
+
+<div style="position:absolute; border:1px solid navy; top:20px; left:100px; width: 100px;" id="menu" onmouseout="setFlag()" onmouseover="setFlag()">
+<ul>
+    <li>a</li><li>b</li>
+</ul>
+</div>
+
+<div id="debug">
+</div>
+
+<script>
+var _flag = false;
+
+function setFlag() {
+    var debugbox = document.getElementById("debug");
+
+    //Debug пео╒
+    if(_flag) {
+        _flag = false;
+        debugbox.innerHTML = "FALSE";
+    } else {
+        _flag = true;
+        debugbox.innerHTML = "TRUE";
+    }
+}
+
+document.onclick=function(event){ 
+    var e = event||window.event 
+    var obj = e.srcElement || e.target 
+    if(!_flag) {
+        //if(obj.nodeName=="BODY"||obj.nodeName=="HTML")
+        document.getElementById("menu").style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
